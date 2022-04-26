@@ -13,16 +13,6 @@ const { get_request_collection, post_request_collection, get_id_and_pwd } = requ
  * {icon: string, action: (function(*, *): boolean), label: string}]}
  */
 module.exports.workspaceActions = [
-    // {
-    //     label: 'Generate credentials',
-    //     icon: 'fa-plus-square',
-    //     action: async (context, models) => {
-    //         const {server} = await read_env_and_req_collection(context, models)
-    //         await context.store.setItem("server", "Hello World")
-    //         await context.app.alert("Info", "Hello " + await context.store.getItem("server"))
-    //         return true
-    //     },
-    // },
     {
         label: 'Share collection',
         icon: 'fa-upload',

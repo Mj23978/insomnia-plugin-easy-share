@@ -1,7 +1,7 @@
-const ENV_VAR_NAME_SERVER = '_easy_share_server';
-const ENV_VAR_NAME_ID = '_easy_share_id';
-const ENV_VAR_NAME_PWD = '_easy_share_pwd';
-const ENV_VAR_NAME_VER = '_easy_share_version';
+const ENV_VAR_NAME_SERVER = '_part_share_server';
+const ENV_VAR_NAME_ID = '_part_share_id';
+const ENV_VAR_NAME_PWD = '_part_share_pwd';
+const ENV_VAR_NAME_VER = '_part_share_version';
 
 
 /**
