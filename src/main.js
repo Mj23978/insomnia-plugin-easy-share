@@ -14,7 +14,7 @@ const { get_request_collection, post_request_collection, get_id_and_pwd } = requ
  */
 module.exports.workspaceActions = [
     {
-        label: 'Share collection',
+        label: 'Share collection ?',
         icon: 'fa-upload',
         action: async (context, models) => {
             const { request_collection_json, server, id, pwd } = await read_env_and_req_collection(context, models)

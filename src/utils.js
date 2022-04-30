@@ -36,7 +36,7 @@ async function read_env_and_req_collection(context, models) {
     const id = environment[ENV_VAR_NAME_ID]
     const pwd = environment[ENV_VAR_NAME_PWD]
 
-    return ({request_collection_json, request_collection, server, id, pwd})
+    return ({ request_collection_json, request_collection, server, id, pwd })
 }
 
 
@@ -56,7 +56,7 @@ async function convert_to_current_workspace(json, local_request_collection) {
     const converted_request_collection_resources = online_request_collection["resources"]
         .filter(r => r['_type'] !== 'workspace').map(r => {
             if (r.parentId && r.parentId === online_workspace['_id']) {
-                return ({...r, parentId: workspace_id})
+                return ({ ...r, parentId: workspace_id })
             }
             return r
         })
