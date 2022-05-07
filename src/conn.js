@@ -27,12 +27,13 @@ async function get_id_and_pwd(server) {
  * @param pwd
  * @return {Promise<(number|T)[]|(number|any)[]>}
  */
-async function post_request_collection(request_collection_json, { server, id, pwd }) {
-    const url = new URL(id, server).href
+async function post_request_collection(request_collection_json, { server, id, name }) {
+    const url = new URL('collections/', server).href
     try {
+        let inp = request_collection_json
+        console.log(inp['resources'])
         const { data, status } = await axios.post(
-            url, { data: request_collection_json, name: "name 123", collectionId: "12"},
-            { params: { id, pwd }, },
+            url, { data: request_collection_json, name: name, collectionId: id },
         )
         return [status, data]
     } catch (e) {
@@ -52,7 +53,7 @@ async function post_request_collection(request_collection_json, { server, id, pw
  * @return {Promise<(number|T)[]|(number|any)[]>}
  */
 async function get_request_collection({ server, id }) {
-    const url = new URL(id, server).href
+    const url = new URL(`collections/${id}`, server).href
 
     try {
         const { data, status } = await axios.get(url)
@@ -66,4 +67,4 @@ async function get_request_collection({ server, id }) {
 }
 
 
-module.exports = { get_request_collection, post_request_collection, get_id_and_pwd }
+module.exports = { get_request_collection, post_request_collection }

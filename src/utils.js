@@ -1,8 +1,4 @@
 const ENV_VAR_NAME_SERVER = '_part_share_server';
-const ENV_VAR_NAME_ID = '_part_share_id';
-const ENV_VAR_NAME_PWD = '_part_share_pwd';
-const ENV_VAR_NAME_VER = '_part_share_version';
-
 
 /**
  * Read environment from request collection
@@ -33,10 +29,8 @@ async function read_env_and_req_collection(context, models) {
     const request_collection = JSON.parse(request_collection_json)
     const environment = read_base_environment(request_collection)
     const server = environment[ENV_VAR_NAME_SERVER]
-    const id = environment[ENV_VAR_NAME_ID]
-    const pwd = environment[ENV_VAR_NAME_PWD]
 
-    return ({ request_collection_json, request_collection, server, id, pwd })
+    return ({ request_collection_json, request_collection, server })
 }
 
 
@@ -69,6 +63,5 @@ async function convert_to_current_workspace(json, local_request_collection) {
 
 
 module.exports = {
-    read_env_and_req_collection, convert_to_current_workspace,
-    ENV_VAR_NAME_ID, ENV_VAR_NAME_PWD, ENV_VAR_NAME_SERVER
+    read_env_and_req_collection, convert_to_current_workspace, ENV_VAR_NAME_SERVER
 }
