@@ -36,8 +36,9 @@ module.exports.workspaceActions = [
                 request_collection_json,
                 { server, id: `${workspaceId}`, name: workspaceName }
             )
+            console.log(`${http_code}, ${data}`)
 
-            if (http_code === 200) {
+            if (http_code === 200 || http_code === 201) {
                 context.app.alert("Done",
                     `Success, collection can be accesses using SERVER="${server}". 
                      You can user direct link "${server}/collections/${workspaceId}" to fetch the workspace.`

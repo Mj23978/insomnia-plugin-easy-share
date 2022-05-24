@@ -30,8 +30,6 @@ async function get_id_and_pwd(server) {
 async function post_request_collection(request_collection_json, { server, id, name }) {
     const url = new URL('collections/', server).href
     try {
-        let inp = request_collection_json
-        console.log(inp['resources'])
         const { data, status } = await axios.post(
             url, { data: request_collection_json, name: name, collectionId: id },
         )
